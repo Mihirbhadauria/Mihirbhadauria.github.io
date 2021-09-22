@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHP Pharmacy</title>
+  <meta charset="utf-8">
+  <meta name="description" content = "SWE20001 Project">
+  <meta name="keywords" content = "HTML, CSS, JavaScript">
+  <meta name="author" content = "Anthony Kakolyris, Dominic Black, Preenit Kshirsagar, Mihir Bhadauria, Thieu Duong Mac">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/editrecord.css" rel="stylesheet">
+  <script>
+    function buttons() {
+      document.getElementById("buttons").innerHTML
+      = "<input class='btn' type='reset' value='Reset'>"
+      + "<div class='divider'></div>"
+      + "<input class='btn' type='submit' value='Update'>";
+    }
+    function stockForm() {
+      document.getElementById("inputForm").innerHTML 
+      = "<p><label for='itemName'>Item name: </label><input type='text' id='itemName' name='itemName' required></p>"
+      + "<p><label for='soh'>New quantity (SOH): </label><input type='text' id='soh' name='soh' size='8' required></p>";
+      buttons();
+    }
+    function saleForm() {
+      document.getElementById("inputForm").innerHTML 
+      = "<p><label for='saleItems'>Sale items: </label><input type='text' id='saleItems' name='saleItems' required></p>"
+      + "<p><label for='salePrice'>New sale price: </label><input type='text' id='salePrice' name='salePrice' size='8' required></p>"
+      + "<p><label for='saleDate'>New sale date: </label><input type='date' id='saleDate' name='saleDate' required></p>";
+      buttons();
+    }
+  </script>
+</head>
+<body>
+  <h1 class="header">People Health Pharmacy Inc.</h1>
+
+  <!-- Logo -->
+  <img src="images/logo.png" alt="PHP Logo" height="200" width="200">
+
+  <!-- Navigation Bar -->
+  <div class="navigation">
+    <ul>
+      <li><a href="index.html">Home</a><li>
+      <li><a href="addrecord.html">Add Record</a><li>
+      <li><a href="editrecord.html">Edit Record</a><li>
+      <li><a href="viewstock.html">View Stock</a><li>
+      <li><a href="viewsales.html">View Sales</a><li>
+    </ul>
+  </div>
+  
+  <form method="POST" action="">
+    <p>Choose a type of record you would like to edit:<br>
+      <input type="radio" id="stock" name="recordType" value="stock" onclick="stockForm()">
+      <label for="stock">Stock</label>
+      <input type="radio" id="sales" name="recordType" value="sales" onclick="saleForm()">
+      <label for="sales">Sales</label>
+    </p>
+    <div id="inputForm"></div>
+    <div id="buttons"></div>
+  </form>
+
+  <aside>
+    <button type="button"><a href="index.html">Back</a></button>
+  </aside>
+</body>
+<footer>
+
+</footer>
+</html>
